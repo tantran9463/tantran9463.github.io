@@ -3,312 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trần Văn Tấn - Senior .NET Developer</title>
+    <title>Trần Văn Tấn - Portfolio CV</title>
     <style>
         :root {
-            --primary-color: #f97316; /* Orange to match profile border */
-            --bg-color: #f8fafc;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --card-bg: #ffffff;
+            --primary-blue: #004A8F;
+            --light-blue: #EBF4FA;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-gray: #555555;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #eef2f5;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 40px 20px;
             line-height: 1.6;
         }
-
-        .container {
-            max-width: 900px;
+        .cv-container {
+            max-width: 850px;
             margin: 0 auto;
-            padding: 2rem;
+            background-color: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 74, 143, 0.15);
+            border-radius: 8px;
+            overflow: hidden;
         }
-
         header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 40px;
             text-align: center;
-            margin-bottom: 3rem;
-            animation: fadeInDown 1s ease-out;
         }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            letter-spacing: 1px;
         }
-
-        .contact-info a {
-            color: var(--text-muted);
+        header h2 {
+            margin: 10px 0 0 0;
+            font-size: 1.5em;
+            font-weight: 400;
+            color: var(--light-blue);
+        }
+        .contact {
+            margin-top: 20px;
+            font-size: 1em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .contact span, .contact a {
+            color: var(--white);
             text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s;
         }
-
-        .contact-info a:hover {
-            color: var(--primary-color);
+        .contact a:hover {
+            text-decoration: underline;
         }
-
-        section {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
+        .main-content {
+            padding: 40px;
         }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        h3 {
+            color: var(--primary-blue);
+            font-size: 1.4em;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
-
-        h2 {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
+        h3:first-child {
+            margin-top: 0;
         }
-
-        .job {
-            margin-bottom: 1.5rem;
-            padding-left: 1rem;
-            border-left: 3px solid #e2e8f0;
-            transition: border-color 0.3s;
+        .experience-item {
+            margin-bottom: 25px;
         }
-
-        .job:hover {
-            border-left-color: var(--primary-color);
-        }
-
-        .job-header {
+        .experience-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .job-title {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .job-date {
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin-left: 1.5rem;
-            color: var(--text-muted);
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        .skills-container {
-            display: flex;
+            align-items: baseline;
             flex-wrap: wrap;
-            gap: 10px;
         }
-
-        .skill-tag {
-            background-color: #fff7ed;
-            color: var(--primary-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid #fed7aa;
-            transition: all 0.3s ease;
+        .company-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: var(--primary-blue);
         }
-
-        .skill-tag:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
+        .job-date {
+            font-weight: bold;
+            color: var(--text-gray);
+            font-style: italic;
         }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
         }
-
-        @media (max-width: 600px) {
-            .job-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        li {
+            margin-bottom: 8px;
+        }
+        .skills-list strong {
+            color: var(--primary-blue);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Trần Văn Tấn</h1>
-            <p><strong>Senior .NET Developer</strong></p>
-            <div class="contact-info">
-                <span>HCM, Vietnam</span> | 
-                <a href="mailto:tantranvan.it@gmail.com">tantranvan.it@gmail.com</a> | 
-                <span>0349691836</span> | 
-                <a href="https://www.linkedin.com/in/tan-tran-van/" target="_blank">LinkedIn</a>
-            </div>
-        </header>
+<div class="cv-container">
+    <header>
+        <h1>Trần Văn Tấn</h1>
+        <h2>SENIOR DEVELOPER</h2>
+        <div class="contact">
+            <span>📍HCM, Vietnam</span>
+            <span>📧Email: tantranvan.it@gmail.com</span>
+            <span>📱0349691836</span>
+            <a href="https://www.linkedin.com/in/tan-tran-van/" target="_blank">🔗 TanTranVan</a>
+        </div>
+    </header>
 
-        <section class="animate-on-scroll">
-            <h2>Objective</h2>
+    <div class="main-content">
+        <h3>Objective</h3>
+        <ul>
+            <li>Seeking a Senior .NET Developer position.</li>
+            <li>Leveraging my extensive programming expertise and technical knowledge to deliver high-quality software solutions that drive business value and foster company growth.</li>
+        </ul>
+
+        <h3>Technical Skills</h3>
+        <ul class="skills-list">
+            <li><strong>Languages & Frameworks:</strong> C#, .NET 8, .NET Core, .NET Framework, Python, FastAPI, HTML, CSS, JQUERY, Vue Js.</li>
+            <li><strong>Databases:</strong> PostgreSQL, Azure SQL, MONGODB, SQL SERVER, Redis, Memcached, Weaviate.</li>
+            <li><strong>Cloud & Infrastructure:</strong> Azure Synapse Analytics, Azure Functions, AWS S3, AWS Lambda, Docker/K8s, IIS, LINUX, NGINX.</li>
+            <li><strong>Architecture & Messaging:</strong> Microservices, Load Balancing, gRPC, REST APIs, RABBITMQ.</li>
+            <li><strong>AI & Machine Learning:</strong> Researched and integrated LLM (Llama 3/3.2, gemma 3).</li>
+            <li><strong>Tools & APIs:</strong> GIT, SVN, GOOGLE APIS, Firebase.</li>
+        </ul>
+
+        <h3>Work Experience</h3>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="company-title">TITAN TECHNOLOGY CORPORATION | Senior Software Engineer</span>
+                <span class="job-date">10/2022 - 07/2025</span>
+            </div>
             <ul>
-                <li>Seeking a Senior .NET Developer position.</li>
-                <li>Leveraging my extensive programming expertise and technical knowledge to deliver high-quality software solutions that drive business value and foster company growth.</li>
+                <li>Lead development initiatives and mentored junior developers to ensure code quality and project alignment.</li>
+                <li>Architected and developed scalable backend systems using .NET Core 6/8 and C#.</li>
+                <li>Managed and optimized cloud databases using Azure SQL, and Microsoft SQL Server.</li>
+                <li>Leveraged Azure Functions for serverless computing and Azure Synapse Analytics for large-scale data processing.</li>
+                <li>Researched and integrated LLM to build a system automation and intelligence, utilizing PostgreSQL for relationship data and Weaviate for semantic search.</li>
+                <li>Developed high-performance APIs using Python and FastAPI.</li>
             </ul>
-        </section>
+        </div>
 
-        <section class="animate-on-scroll">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">.NET 8</span>
-                <span class="skill-tag">.NET Core</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">FastAPI</span>
-                <span class="skill-tag">HTML/CSS/JQuery</span>
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">Azure SQL</span>
-                <span class="skill-tag">SQL Server</span>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">Redis</span>
-                <span class="skill-tag">Azure Services</span>
-                <span class="skill-tag">Docker/K8s</span>
-                <span class="skill-tag">Microservices</span>
-                <span class="skill-tag">LLM Integration</span>
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="company-title">FREELANCE | Fullstack Developer</span>
+                <span class="job-date">01/2022 - 03/2022</span>
             </div>
-        </section>
-
-        <section class="animate-on-scroll">
-            <h2>Work Experience</h2>
-
-            <div class="job">
-                <div class="job-header">
-                    <div class="job-title">TITAN TECHNOLOGY CORPORATION | Senior Software Engineer</div>
-                    <div class="job-date">10/2022 - 07/2025</div>
-                </div>
-                <ul>
-                    <li>Lead development initiatives and mentored junior developers to ensure code quality and project alignment.</li>
-                    <li>Architected and developed scalable backend systems using .NET Core 6/8 and C#.</li>
-                    <li>Managed and optimized cloud databases using Azure SQL, and Microsoft SQL Server.</li>
-                    <li>Leveraged Azure Functions for serverless computing and Azure Synapse Analytics for large-scale data processing.</li>
-                    <li>Researched and integrated LLM (Llama 3/3.2, gemma 3) to build a system automation and intelligence.</li>
-                    <li>Developed high-performance APIs using Python and FastAPI; utilized PostgreSQL (relationship data) and Weaviate (semantic search).</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <div class="job-title">FREELANCE | Fullstack Developer</div>
-                    <div class="job-date">01/2022 - 03/2022</div>
-                </div>
-                <ul>
-                    <li>Took and analyzed requirements to develop a CRM application for managing customers, orders, and stock.</li>
-                    <li>Migrated data to the new system utilizing .Net core 2.1, Bootstrap, Datatable library, and SQL server cloud.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <div class="job-title">VINHMS | Backend Developer</div>
-                    <div class="job-date">05/2021 - 12/2021</div>
-                </div>
-                <ul>
-                    <li>Developed an Asset Management system backend and optimized it using PostgreSQL.</li>
-                    <li>Contributed to the "Core Coding" framework, accelerating the product's go-live date.</li>
-                    <li>Developed high-performance communication protocols using .NET 5/6 and gRPC.</li>
-                    <li>Implemented REST APIs, custom Middlewares, Filters, and Attributes in ASP.NET Core.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <div class="job-title">VIETMAP | Backend Developer</div>
-                    <div class="job-date">2018 - 2021</div>
-                </div>
-                <ul>
-                    <li>Maintained and optimized the quanlyxe system handling big data (~30-40Gb/day), ensuring continuous service for customers.</li>
-                    <li>Refactored source code and flows to stabilize the system for new customers and device types joining.</li>
-                    <li>Developed Rest APIs and gRPC; utilized Google APIs, Docker, Kubernetes, RabbitMQ, MongoDB, MySQL, and Redis.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <div class="job-header">
-                    <div class="job-title">VIETMAP | Fullstack Developer</div>
-                    <div class="job-date">JAN 2015 - 2018</div>
-                </div>
-                <ul>
-                    <li>Worked in Taxi BU building backends for Driver, Passenger, web, and winform applications for vehicle dispatch and monitoring.</li>
-                    <li>Developed APIs with service stack, SignalR, JQuery, HTML, CSS, and .NET framework.</li>
-                    <li>Acted as Project Manager for Taxi project (3 members) for 1 year.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="animate-on-scroll">
-            <h2>Education</h2>
-            <div class="job">
-                <div class="job-header">
-                    <div class="job-title">NONG LAM UNIVERSITY | Major: GIS</div>
-                    <div class="job-date">OCT 2010 - MAY 2014</div>
-                </div>
-                <ul>
-                    <li>Training included Programming, Data structure, and Working with Map data (coordinates, routing).</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="animate-on-scroll">
-            <h2>Additional Information & Interests</h2>
             <ul>
-                <li>Highly responsible, approachable, and collaborative professional with a passion for researching emerging technologies.</li>
-                <li>Value integrity, transparency, and continuous learning in all professional environments.</li>
-                <li><strong>Interests:</strong> Football, swim, running, Music, Film, Travel, Cooking.</li>
+                <li>Took and analyzed requirements to develop a CRM application for managing customers, orders, and stock.</li>
+                <li>Migrated data to the new system using .Net core 2.1, Bootstrap, Datatable library, and SQL server cloud.</li>
             </ul>
-        </section>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="company-title">VINHMS | Backend Developer</span>
+                <span class="job-date">05/2021 - 12/2021</span>
+            </div>
+            <ul>
+                <li>Developed an Asset Management system backend and optimized it using PostgreSQL.</li>
+                <li>Contributed to the "Core Coding" framework, accelerating the product's go-live date.</li>
+                <li>Developed high-performance communication protocols using .NET 5/6 and gRPC.</li>
+                <li>Implemented REST APIs, custom Middlewares, Filters, and Attributes in ASP.NET Core.</li>
+                <li>Utilized Postgres, Redis, and Memcached for data optimization and applied Microservices, Load Balancing, and Containerization.</li>
+                <li>Built Tracing track APIs and supported team leaders in reviewing and refactoring source code.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="company-title">VIETMAP | Backend Developer</span>
+                <span class="job-date">2018 - 2021</span>
+            </div>
+            <ul>
+                <li>Maintained and optimized the quanlyxe system handling big data (~30-40Gb/day), helping customers continue using the service.</li>
+                <li>Refactored source code and flows to stabilize the system for new customers and device types.</li>
+                <li>Developed Rest APIs and gRPC, utilizing Google API (Maps, Firebase), Docker, Kubernetes, RabbitMQ, MongoDB, MySQL, and Redis.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="company-title">VIETMAP | Fullstack Developer</span>
+                <span class="job-date">JAN 2015 - 2018</span>
+            </div>
+            <ul>
+                <li>Worked in the Taxi BU building backends for Driver, Passenger, web, and winform applications to dispatch vehicles and manage monitoring.</li>
+                <li>Developed APIs with service stack, SignalR, JQuery, HTML, CSS, and .NET framework over a 3-year period.</li>
+                <li>Managed a 3-member Taxi project as Project Manager for 1 year.</li>
+                <li>Supported live stream video with HLS, worked with Protobuf, used Devexpress to develop winform, and supported Android application publishing to the Play Store.</li>
+            </ul>
+        </div>
+
+        <h3>Education</h3>
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="company-title">NONG LAM UNIVERSITY | Major: GIS (Geographic Information System)</span>
+                <span class="job-date">OCT 2010 - MAY 2014</span>
+            </div>
+            <ul>
+                <li>Training included Programming, Data structure, and Working with Map data (coordinates, routing).</li>
+            </ul>
+        </div>
+
+        <h3>Additional Information</h3>
+        <ul>
+            <li>Highly responsible, approachable, and collaborative professional.</li>
+            <li>Passionate about researching emerging technologies and sharing knowledge with the community.</li>
+            <li>Value integrity, transparency, and continuous learning in all professional environments.</li>
+            <li><strong>Interests:</strong> Football, swim, running, Music, Film, Travel, Cooking.</li>
+        </ul>
     </div>
+</div>
 
-    <!-- Script to trigger animations when scrolling -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            document.querySelectorAll(".animate-on-scroll").forEach((section) => {
-                observer.observe(section);
-            });
-        });
-    </script>
 </body>
 </html>
