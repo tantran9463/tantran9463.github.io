@@ -1,5 +1,5 @@
 
-# Trần Văn Tấn - Senior .NET Developer
+# TRẦN VĂN TẤN - Senior .NET Developer
 
 **Location:** HCM, Vietnam | **Email:** tantranvan.it@gmail.com | **Phone:** 0349691836
 **LinkedIn:** [tan-tran-van](https://www.linkedin.com/in/tan-tran-van/)
