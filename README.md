@@ -7,7 +7,7 @@
 ---
 
 ## 🎯 Objective
-* Seeking a Senior .NET Developer position.
+* Seeking a Senior Developer position.
 * Leveraging my extensive programming expertise and technical knowledge to deliver high-quality software solutions that drive business value and foster company growth.
 
 ## 💻 Technical Skills
